@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Lora:wght@500&family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  width: 100vw;
+  height: auto;
+  background-color: #E2A123;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  background-color: #E27526;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+/*Lista de enlaces a diferentes puntos*/
+.nav__list li a{
+  text-decoration: none;
+  color: #fff;
+  border-radius: 24px;
+  padding: 10px;
+  background-color: #C55A11;
+} 
+
+/*Efecto de la lista al pasar el raton*/
+.nav__list li:hover a{
+  background-color: #E2A123;
+  transition: all ease-in-out 0.2s;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 1px #000;
+}
+
+/*Icono de cerrar y abrir el menu*/
+.abrir__menu, .cerrar_menu{
+  display: none;
+}
+
+/*Icono de menu hamburguesa*/
+.abrir__menu{
+  width: 50px;
+  height: 50px;
+  color: #000;
+}
+
+/*Contenedor del logo y del nombre de la ferreteria*/
+.header__content__logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; /* Centra los elementos en el eje transversal (vertical) */
+  h1{
+    font-family: 'Lora', sans-serif;
+    text-shadow: 1px 1px 2px #000;
+    color: #fff;
+  }
+}
+
+/*Enlace al inicio al presionar el logo */
+a .imagen__logo {
+  max-width: 5rem;
+  margin-right: 5px;
+}
+
+
+
+
+
+
+
+.container {
+  height:100%;
+  display: grid;
+  grid-template-columns:repeat(2, 1fr); /*Tres columnas*/
+  padding: 1rem 5rem;
+}
+
+
+.text-article {
+  flex: 1; 
+  margin-right: 25px;
+  
+  h3{
+    font-size: 5rem;
+    font-family: 'Lora', sans-serif;
+    text-shadow: 1px 1px 1px #000;
+    margin-bottom: 10px;
+    color: #813B0C;
+  }
+
+  h4{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  b{
+    text-shadow: 1px 1px 2px #000;
+  }
+
+  p{
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: justify;
+    padding: 5px;
+    color: #813B0C;
+  }
+}
+
+
+.container-image{
+  flex: 1; 
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 1fr); 
+  
+  /*Otra clase*/
+  .image-hombre{
+    flex: 1px;
+    margin-left: 100px;
+  }
+
+  .image-herramienta{
+    flex: 1;
+    margin-left: 100px;
+    div{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 5px;
+      h3{
+        font-size: 2rem;
+        color: #C55A11;
+      }
+      p{
+        font-size: 1rem;
+        color: #C55A11;
+      }
+
+    }
+    img{
+      width: 350px;
+      height: 220px;
+    }
+  }
+
+
+}
+
+
+
+
+
+
+/*Medida de tablet*/
+
+@media screen and (max-width: 1515px) {
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5rem;
+    background-color: #E27526;
+  }
+
+
+  /*Muestra el icono del menu hamburguesa*/
+  .abrir__menu,
+  .cerrar_menu{
+    display: block;
+  }
+
+  /*Oculta el nombre de la ferreteria y solo muestra la imagen del logo*/
+  .header__content__logo h1 {
+    display: none;
+  }
+  
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+  } 
+
+  .nav{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    /*1*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #E27526;
+    padding: 2rem;
+  }
+
+  /*Funcion que permite activar el menu responsive desde jaavascript*/
+  .nav.visible{
+    width: 100vw;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all ease-in-out 0.2s;
+    z-index: 999;
+  }
+
+  .nav__list{
+    /*2*/
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+  }
+
+  .nav__list li{
+    text-decoration: none;
+    color: #1c1c1c;
+    padding: 10px;
+    font-size: 2em;
+    background-color: #C55A11;
+
+    position: relative;
+    top: 50px;
+    margin-bottom: 30px;
+    border-radius: 50px;
+  } 
+
+  /*Elimina estilos anteriores de los enlaces*/
+  .nav__list li:hover a {
+    background-color: initial; /* Restablece el color de fondo original */
+    transition: none; /* Elimina la transición */
+    border: initial; /* Elimina el borde */
+    box-shadow: initial; /* Elimina la sombra */
+  }
+
+  /*Icono de cerrar menu de hamburguesa*/
+  .cerrar_menu{
+    width: 50px;
+    height: 50px;
+    color: #000;
+    background-color: #E2A123;
+    border-radius: 32px;
+    padding: 5px;
+    border: 1px solid #000000;
+    box-shadow: 1px 1px 5px #000000;
+  }
+
+  
+
+
+.container {
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr; 
+  padding: 1rem 10rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text-article {
+  flex: 1; 
+  padding: 1rem;
+  h3{
+    text-align: center;
+    font-size: 5rem;
+  }
+
+  h4{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  b{
+    text-shadow: 1px 1px 2px #000;
+  }
+
+  p{
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: justify;
+    padding: 5px;
+  }
+
+}
+
+
+
+.container-image{
+  flex: 1; 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  
+  /*Otra clase*/
+  .image-hombre{
+    flex: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-herramienta{
+    flex: 1;
+    margin-right: 5px;
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    div{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 5px;
+      h3{
+        font-size: 2rem;
+        color: #C55A11;
+      }
+      p{
+        font-size: 1rem;
+        color: #C55A11;
+      }
+
+    }
+    img{
+      width: 350px;
+      height: 220px;
+    }
+  }
+
+
+}
+
+}
+
+
+
+@media screen and (max-width: 718px){
+  header {
+    padding: 1rem 2rem;
+  }
+
+  .container-image{
+    flex: 1; 
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    
+    /*Otra clase*/
+    .image-hombre{
+      flex: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .image-herramienta{
+      flex: 1;
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 90px;
+      div{
+        h3{
+          font-size: 2rem;
+          color: #C55A11;
+        }
+        p{
+          font-size: 1rem;
+          color: #C55A11;
+        }
+  
+      }
+      img{
+        width: 350px;
+        height: 220px;
+      }
+    }
+  } 
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 505px){
+
+  .text-article {
+    padding: 1rem 2rem;
+    h3{
+      text-align: center;
+      font-size: 3rem;
+    }
+    p{
+      font-size: 1.2rem;
+    }
+  }
+
+
+  header {
+    padding: 1rem 2rem;
+  }
+
+  .container-image{
+    flex: 1; 
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    
+    /*Otra clase*/
+    .image-hombre{
+      flex: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .image-herramienta{
+      flex: 1;
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 90px;
+      div{
+        h3{
+          font-size: 2rem;
+          color: #C55A11;
+        }
+        p{
+          font-size: 1rem;
+          color: #C55A11;
+        }
+  
+      }
+      img{
+        width: 350px;
+        height: 220px;
+      }
+    }
+  } 
+}
+
+
+
+
+@media screen and (max-width: 505px){
+
+  .text-article {
+    h3{
+      text-align: center;
+      font-size: 2rem;
+    }
+    p{
+      font-size: 1rem;
+    }
+  }
+
+
+  header {
+    padding: 1rem 2rem;
+  }
+
+  .container-image{
+    flex: 1; 
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    
+    /*Otra clase*/
+    .image-hombre{
+      flex: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .image-herramienta{
+      flex: 1;
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 90px;
+      div{
+        h3{
+          font-size: 2rem;
+          color: #C55A11;
+        }
+        p{
+          font-size: 1rem;
+          color: #C55A11;
+        }
+  
+      }
+      img{
+        width: 350px;
+        height: 220px;
+      }
+    }
+  } 
+}
