@@ -10,7 +10,7 @@ Sistema de punto de venta desarrollado en lenguajes de programación PHP, JavaSc
 ## Autores
 
 - [@luiscardozo161002](https://github.com/luiscardozo161002/)
-- [@norasalinas.dev](https://github.com/norasalinas.dev/)
+- [@salinas-dev](https://github.com/salinas-dev/)
 
 
 
